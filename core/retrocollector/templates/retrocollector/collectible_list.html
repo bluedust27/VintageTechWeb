@@ -1,0 +1,42 @@
+{% extends 'retrocollector/base.html'%}
+
+{% block content %}
+<table class="table table-borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>Collectible Name</td>
+            <td>Type</td>
+            <td>Date Manufactured</td>
+            <td>Description</td>
+            <td>
+                <a href="{% url 'collectible_insert' %}" class="btn btn-outline-success">
+                   <i class="fa fa-plus" aria-hidden="true"></i>
+                    Add New
+                </a>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for items in collectible_list %}
+            <tr>
+                <td>{{items.name}}</td>
+                <td>{{items.type}}</td>
+                <td>{{items.date_manufactured}}</td>
+                <td>{{items.description}}</td>
+                <td>
+                    <a href="{% url 'collectible_update' items.id%}" class="btn text-secondary px-0">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    </a>
+                    <form action="{% url 'collectible_delete' items.id%}" method="post" class="d-inline">
+                        {%csrf_token%}
+                        <button type="submit" class="btn"> <i class="fa fa-trash fa-lg text-danger float-right" aria-hidden="true"></i>
+
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content%}
