@@ -1,4 +1,4 @@
-# Deploy this application on EC2 instance
+# Steps to deploy this application on EC2 instance
 #### 1. Create virtual environment
 	python3 -m venv /django/VintageTechWeb/<name of virtual env>
 #### 2. Activiate virtual env.
