@@ -1,0 +1,26 @@
+{% extends 'retrocollector/base.html'%}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div>
+  <h3>Create Account</h3>
+  <form method="post" autocomplete="off">
+    {% csrf_token %}
+    {{form.username|as_crispy_field}}
+    {{form.email|as_crispy_field}}
+    {{form.password1|as_crispy_field}}
+    {{form.password2|as_crispy_field}}
+    <div class="col-md-4">
+      <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</button>
+    </div>
+  </form>
+
+  <div class="lead">
+    Already have an account?
+    <a href="{% url 'login'%}">Login</a>
+  </div>
+</div>
+
+
+{% endblock content %}
+

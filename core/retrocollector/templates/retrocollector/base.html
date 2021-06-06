@@ -12,8 +12,15 @@
         <div class="col-md-10 offset-md-1 mt-5">
             <div class="jumbotron">
               <h1 class="display-4">Vintage Collectors</h1>
-              <p class="lead">Add a new collectible</p>
+<!--              <p class="lead">Add a new collectible</p>-->
               <hr class="my-4">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
                 {% block content %}
                 {% endblock content%}
             </div>

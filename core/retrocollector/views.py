@@ -4,6 +4,9 @@ from .forms import CollectibleForm
 from .models import Collectible
 
 
+def homepage_view(request):
+    return render(request, 'retrocollector/homepage.html')
+
 def collectible_list(request):
     context = {'collectible_list':Collectible.objects.all()}
     return render(request, 'retrocollector/collectible_list.html', context)
