@@ -16,8 +16,3 @@ def register(request):
         form = UserRegisterForm()
     return render(request, 'accounts/register.html', {'form': form})
 
-
-def login(request):
-    return render(request, 'accounts/login.html')
-
-
