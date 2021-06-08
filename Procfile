@@ -1,1 +1,1 @@
-web: gunicorn VintageTechWeb.core.core.wsgi
+web: gunicorn core.wsgi
