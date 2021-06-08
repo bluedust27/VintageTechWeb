@@ -19,7 +19,7 @@ from django.urls import path, include
 from retrocollector import views
 
 urlpatterns = [
-    path('', views.homepage_view),
+    path('', views.homepage_view, name='homepage'),
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
     path('collectibles/', include('retrocollector.urls')),
